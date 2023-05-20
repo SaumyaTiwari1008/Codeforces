@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.*;   
+public class restore {
+    public static void main(String[] args) {
+        int t;
+        Scanner sc=new Scanner(System.in);
+         t=sc.nextInt();
+        while(t-->0)
+        {
+            int n,k;
+            n=sc.nextInt();
+            k=sc.nextInt();
+            ArrayList<int[]> a = new ArrayList<>();
+            ArrayList<Integer> b=new ArrayList<>();
+            for(int i=0;i<n;i++)
+            {
+               int [] z=new int[2];
+               z[0]=sc.nextInt();
+               z[1]=i;
+                a.add(z);
+            }
+            for(int i=0;i<n;i++)
+            {
+                b.add(sc.nextInt());
+            }
+            int arr[]=new int[n];
+            Collections.sort(a, Comparator.comparingInt(row -> row[0]));
+            Collections.sort(b);
+            for(int i=0;i<n;i++)
+            {
+                arr[a.get(i)[1]]=b.get(i);
+            }
+            for(int i=0;i<n;i++)
+            {
+                System.out.print(arr[i]+" ");
+        }
+            System.out.println(" ");
+        }
+    }
+}
