@@ -1,0 +1,30 @@
+import java.util.*;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		int t=in.nextInt();
+		while(t-->0){
+		    int n=in.nextInt(),a[]=new int[n],even=0,odd=0,min=Integer.MAX_VALUE;
+		    for(int i=0;i<n;i++){
+		        a[i]=in.nextInt();
+		        if(a[i]%2==0){
+		            even++;
+		        }
+		        else
+		            odd++;
+	             min=Math.min(min,a[i]);
+	             max=Math.max(max,a[i]);
+		    }
+		    if(odd==n||even==n){
+		        System.out.println("Yes");
+		        continue;
+		    }
+		    if(( min%2!=0 ))
+		        System.out.println("Yes");
+	        else
+	            System.out.println("No");
+		}
+	}
+}
